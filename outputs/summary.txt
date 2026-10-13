@@ -1,0 +1,10 @@
+
+* Best classifier: Logistic Regression -> Test accuracy 0.9938, macro-F1 0.9947, AUC 0.9999.
+  Linear/kernel models excel because tumour types are near-linearly separable in high-dim expression space.
+* HMM classifier (Gaussian HMM (4 states)): accuracy 0.9627; latent states capture tissue-specific
+  expression 'regimes' along the gene sequence, giving an interpretable generative model.
+* Best regressor: Lasso -> R² 0.9453, RMSE 1.5658; gene gene_9176 is strongly co-regulated
+  with the rest of the transcriptome.
+* Best clustering: Spectral -> ARI 0.9925, NMI 0.9895, cluster accuracy 0.9975;
+  unsupervised groups recover the 5 cancer types almost exactly -> strong biological structure.
+* Top biomarker genes saved in outputs/top_biomarkers.csv. Results are leakage-free (feature selection inside CV).
